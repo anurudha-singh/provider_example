@@ -13,10 +13,10 @@ class SecondScreen extends StatefulWidget {
 class _SecondScreenState extends State<SecondScreen> {
   @override
   Widget build(BuildContext context) {
-    // var provider = Provider.of<NumberProvider>(context, listen: false);
     return Scaffold(
         appBar: AppBar(
-          title: Text('This is my second screen'),
+          title: const Text('This is my second screen'),
+          backgroundColor: Colors.amber,
         ),
         body: Consumer<NumberProvider>(
             builder: (BuildContext context, provider, Widget? child) => Column(
@@ -28,7 +28,7 @@ class _SecondScreenState extends State<SecondScreen> {
                             itemBuilder: (BuildContext context, int index) {
                               return Text(
                                 provider.numbersList[index].toString(),
-                                style: TextStyle(fontSize: 25),
+                                style: const TextStyle(fontSize: 25),
                               );
                             })),
                     ElevatedButton(

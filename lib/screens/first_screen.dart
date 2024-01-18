@@ -5,7 +5,7 @@ import 'package:provider_example/screens/second_screen.dart';
 
 // ignore: must_be_immutable
 class FirstScreen extends StatefulWidget {
-  FirstScreen({super.key});
+  const FirstScreen({super.key});
 
   @override
   State<FirstScreen> createState() => _FirstaScreenState();
@@ -26,7 +26,7 @@ class _FirstaScreenState extends State<FirstScreen> {
               SizedBox(height: MediaQuery.of(context).size.height * 25 / 100),
               Text(
                 provider.numbersList.last.toString(),
-                style: TextStyle(fontSize: 25),
+                style: const TextStyle(fontSize: 25),
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 10 / 100),
               ElevatedButton(
@@ -43,7 +43,7 @@ class _FirstaScreenState extends State<FirstScreen> {
                     ) {
                       return Text(
                         provider.numbersList[index].toString(),
-                        style: TextStyle(fontSize: 25),
+                        style: const TextStyle(fontSize: 25),
                       );
                     }),
               ),
@@ -51,10 +51,11 @@ class _FirstaScreenState extends State<FirstScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SecondScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const SecondScreen()),
                     );
                   },
-                  child: Text('Click here'))
+                  child: const Text('Click here'))
             ]),
           ),
         ),
